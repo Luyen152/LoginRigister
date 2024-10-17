@@ -1,0 +1,83 @@
+package tam.dev.data;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class ProductImpl {
+private Connection conn;
+	
+	public ProductImpl(Connection conn) {
+		super();
+		this.conn = conn;
+	}
+
+	public void insert() {
+        // TODO Auto-generated method stub
+        String sql = "INSERT INTO PRODUCTS(ID, NAME, DESCRIPTION, THUMBNAIL, PRICE, QUANTITY, CATEGORY_ID) VALUES(NULL, ?, ?, ?, ?, ?, ?)";
+        try {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, "Beats Solo3 Wireless On-Ear");
+            stmt.setString(2, "Speakers");
+            stmt.setString(3, "thumbnail5.jpg");
+            stmt.setDouble(4, 20000);
+            stmt.setInt(5, 20);
+            stmt.setInt(6, 3);
+            stmt.execute();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+	
+	public void update() {
+        // TODO Auto-generated method stub
+        String sql = "UPDATE PRODUCTS SET name = ?, description = ?, thumbnail = ?, price = ?, quantity = ?, category_id = ? WHERE id = ?";
+        try {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, "Bose SoundLink Mini");
+            stmt.setString(2, "Engine");
+            stmt.setString(3, "thumbnail3.jpg");
+            stmt.setDouble(4, 80000);
+            stmt.setInt(5, 55);
+            stmt.setInt(6, 2);
+            stmt.setInt(8, 2);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+	
+	public void delete() {
+        // TODO Auto-generated method stub
+        String sql = "DELETE FROM CATEGORIES WHERE id = ?";
+        try {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, 1); //1 là id của category
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+	
+	public void select() {
+        // TODO Auto-generated method stub
+        String sql = "SELECT * FROM CATEGORIES";
+        try {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String description = rs.getString("description");
+                System.out.format("%d : %s : %s%n", id, name, description).println();
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+}

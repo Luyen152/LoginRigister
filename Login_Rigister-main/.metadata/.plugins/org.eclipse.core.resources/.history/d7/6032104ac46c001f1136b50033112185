@@ -1,0 +1,52 @@
+package tam.dev.data.impl;
+
+import java.util.List;
+
+import tam.dev.data.dao.OrderItemDao;
+import tam.dev.data.model.OrderItem;
+
+public class OrderItemImpl implements OrderItemDao{
+
+	@Override
+	public boolean insert(OrderItem orderItem) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(OrderItem orderItem) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public OrderItem find(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<OrderItem> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<OrderItem> findByOder(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<OrderItem> findByProduct(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

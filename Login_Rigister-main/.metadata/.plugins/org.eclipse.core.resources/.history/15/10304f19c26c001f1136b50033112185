@@ -1,0 +1,71 @@
+package tam.dev;
+import java.util.List;
+import tam.dev.data.impl.CategoryImpl;
+import tam.dev.data.impl.UserImpl;
+import tam.dev.data.dao.CategoryDao;
+import tam.dev.data.model.Category;
+import tam.dev.data.model.Order;
+import tam.dev.data.model.User;
+import tam.dev.data.dao.UserDao;
+import tam.dev.data.dao.OrderDao;
+import tam.dev.data.impl.OrderImpl;
+public class MainApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		CategoryDao categoryDao = new CategoryImpl();
+		UserDao userDao = new UserImpl();
+		OrderDao orderDao = new OrderImpl();
+//		Insert category
+//		Category cat = new Category("Ao canh","Mo ta 3");
+//		categoryDao.insert(cat);
+		//Find category
+//        Category findCat = categoryDao.find(1);
+//		Category findCat = categoryDao.find(2);
+//		System.out.println("Category found: " + findCat.getName());
+		//Update category
+//		findCat.setName("Ao lua");
+//		categoryDao.update(findCat);
+		//Delete category
+//		categoryDao.delete(4);
+		//Find all categories
+		List<Category> allCats = categoryDao.findAll();
+		for (Category category : allCats) {
+            System.out.println("Id: "+category.getId()+"; Ten: "+ category.getName()+"; Mo ta: "+ category.getDescription());
+        }
+//		Insert user
+//		User usr = new User("def@gmail.com","pass2","staff1");
+//        userDao.insert(usr);
+		//Find user
+//		User findUser = userDao.find(3);
+//		System.out.println("User found: " + findUser.getEmail());
+//		//Update user
+//		findUser.setEmail("taixiu@gmail.com");
+//		userDao.update(findUser);
+		//Delete user
+//		userDao.delete(4);
+		//Find all users
+		List<User> allUsers = userDao.findAll();
+        for (User user : allUsers) {
+            System.out.println("Id: "+user.getId()+"; Email: "+ user.getEmail()+"; Mat khau: "+ user.getPassword()+"; Quyen: "+ user.getRole());
+        }
+//        //insert new order
+//        Order ordeal = new Order("GfsGV1fgE","finished",1);
+//        orderDao.insert(ordeal);
+        //find order
+        Order findOrder = orderDao.find(1);
+        System.out.println("Order found: " + findOrder.getId());
+        //update order
+        findOrder.setStatus("pending");
+        orderDao.update(findOrder);
+//        //delete order
+//        orderDao.delete(1);
+//        //find all orders
+//        List<Order> allOrders = orderDao.findAll();
+//        for (Order order : allOrders) {
+//            System.out.println("Id: "+order.getId()+"; User: "+ order.getUserId()+"; Code: "+ order.getCode()+"; Ngay tao: "+ order.getCreatedAt()+"; Tinh trang: "+ order.getStatus());
+//        }
+	
+	}
+	
+}

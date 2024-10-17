@@ -1,0 +1,40 @@
+package tam.dev.data.impl;
+
+import java.util.List;
+
+import tam.dev.data.dao.ProductDao;
+import tam.dev.data.model.Product;
+
+public class ProductImpl implements ProductDao{
+
+	@Override
+	public boolean insert(Product product) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(Product product) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Product find(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

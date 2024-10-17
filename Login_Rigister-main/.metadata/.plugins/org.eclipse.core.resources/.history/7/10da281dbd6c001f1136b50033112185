@@ -1,0 +1,70 @@
+package tam.dev.data.impl;
+
+import java.util.List;
+
+import tam.dev.data.dao.OrderDao;
+import tam.dev.data.model.Order;
+
+public class OrderImpl implements OrderDao{
+
+	@Override
+	public boolean insert(Order order) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(Order order) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Order find(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Order> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Order> findByUser(int userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Order findByCode(String code) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Order> findByStatus(String status) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int countOrderByDay(String date) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double earningOrderByDay(String date) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

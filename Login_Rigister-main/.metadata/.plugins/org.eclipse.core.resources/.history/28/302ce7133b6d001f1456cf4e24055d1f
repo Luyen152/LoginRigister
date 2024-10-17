@@ -1,0 +1,12 @@
+package tam.dev.data;
+
+import java.sql.Connection;
+
+public class OrderItemImpl {
+	private Connection conn;
+	
+	public OrderItemImpl(Connection conn) {
+		super();
+		this.conn = conn;
+	}
+}

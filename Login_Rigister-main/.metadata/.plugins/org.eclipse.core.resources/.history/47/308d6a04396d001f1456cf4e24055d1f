@@ -1,0 +1,29 @@
+package tam.dev.data;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class OrderImpl {
+	private Connection conn;
+	
+	public OrderImpl(Connection conn) {
+		super();
+		this.conn = conn;
+	}
+	public boolean insert() {
+        String sql = "INSERT INTO ORDERS(ID, CODE, STATUS, USER_ID) VALUES(NULL, ?, ?, ?)";
+        try {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, "order Code");
+            stmt.setString(2, "order Status");
+            stmt.setInt(3, 1);
+
+            stmt.execute();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return false;
+    }
+}
